@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Receitas da Família</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="logo">🍰 Receitas da Família</div>
+
+        <nav>
+            <a href="#receitas">Receitas</a>
+            <a href="#familia">Nossa Família</a>
+
+            <button id="abrirLogin" class="botao-login">
+                🔐 Área da família
+            </button>
+        </nav>
+    </header>
+
+
+    <!-- CAPA -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <span>📖 Nosso livro de receitas</span>
+
+            <h1>
+                Sabores que
+                <strong>contam histórias</strong>
+            </h1>
+
+            <p>
+                Receitas feitas com carinho, reunidas para guardar
+                os sabores e momentos especiais da família.
+            </p>
+
+            <a href="#receitas" class="botao">
+                Ver receitas
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FRASE -->
+    <section class="frase">
+
+        <div class="aspas">“</div>
+
+        <p>
+            Uma receita pode alimentar o corpo,
+            mas uma receita de família alimenta
+            também o coração.
+        </p>
+
+        <span>— Livro de Receitas da Família</span>
+
+    </section>
+
+
+    <!-- RECEITAS -->
+    <section id="receitas" class="receitas-section">
+
+        <div class="titulo-section">
+
+            <span>🍽️ Nosso caderno</span>
+
+            <h2>
+                Escolha uma receita
+            </h2>
+
+            <p>
+                Escolha uma categoria para encontrar sua receita favorita.
+            </p>
+
+        </div>
+
+
+        <!-- FILTROS -->
+        <div class="filtros">
+
+            <button class="filtro ativo" data-filtro="todas">
+                Todas
+            </button>
+
+            <button class="filtro" data-filtro="doces">
+                🍰 Doces
+            </button>
+
+            <button class="filtro" data-filtro="bolos">
+                🎂 Bolos
+            </button>
+
+            <button class="filtro" data-filtro="massas">
+                🍝 Massas
+            </button>
+
+            <button class="filtro" data-filtro="salgados">
+                🥧 Salgados
+            </button>
+
+            <button class="filtro" data-filtro="bebidas">
+                ☕ Bebidas
+            </button>
+
+        </div>
+
+
+        <!-- CARDS -->
+        <div class="receitas-grid">
+
+
+            <!-- BOLO CHOCOLATE -->
+            <article class="receita-card" data-categoria="bolos doces">
+
+                <img src="img/bolo de chocolate.jpg"
+                     alt="Bolo de chocolate">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        BOLOS
+                    </span>
+
+                    <h3>
+                        Bolo de Chocolate
+                    </h3>
+
+                    <p>
+                        Um bolo fofinho com uma deliciosa cobertura de chocolate.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="bolo-chocolate">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOLO CENOURA -->
+            <article class="receita-card" data-categoria="bolos">
+
+                <img src="img/bolo de cenoura.jpg"
+                     alt="Bolo de cenoura">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        BOLOS
+                    </span>
+
+                    <h3>
+                        Bolo de Cenoura
+                    </h3>
+
+                    <p>
+                        Clássico bolo de cenoura com cobertura de chocolate.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="bolo-cenoura">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOLO LIMÃO -->
+            <article class="receita-card" data-categoria="bolos">
+
+                <img src="img/bolo de limao.jpg"
+                     alt="Bolo de limão">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        BOLOS
+                    </span>
+
+                    <h3>
+                        Bolo de Limão
+                    </h3>
+
+                    <p>
+                        Um bolo leve, macio e com aquele sabor delicioso de limão.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="bolo-limao">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- TORTA -->
+            <article class="receita-card" data-categoria="doces">
+
+                <img src="img/torta de morango.jpg"
+                     alt="Torta de morango">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        DOCES
+                    </span>
+
+                    <h3>
+                        Torta de Morango
+                    </h3>
+
+                    <p>
+                        Torta cremosa com morangos frescos.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="torta-morango">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BRIGADEIRO -->
+            <article class="receita-card" data-categoria="doces">
+
+                <img src="img/brigadeiro.jpg"
+                     alt="Brigadeiros">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        DOCES
+                    </span>
+
+                    <h3>
+                        Brigadeiro
+                    </h3>
+
+                    <p>
+                        O tradicional brigadeiro brasileiro.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="brigadeiro">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- LASANHA -->
+            <article class="receita-card" data-categoria="massas">
+
+                <img src="img/lasanha.jpg"
+                     alt="Lasanha">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        MASSAS
+                    </span>
+
+                    <h3>
+                        Lasanha da Família
+                    </h3>
+
+                    <p>
+                        Lasanha tradicional com molho, carne e queijo.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="lasanha">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CAFÉ -->
+            <article class="receita-card" data-categoria="bebidas">
+
+                <img src="img/cafe.jpg"
+                     alt="Café">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        BEBIDAS
+                    </span>
+
+                    <h3>
+                        Café da Família
+                    </h3>
+
+                    <p>
+                        Um café especial para acompanhar boas conversas.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="cafe">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- BOLO EXTRA -->
+            <article class="receita-card" data-categoria="bolos">
+
+                <img src="img/bolo.jpg"
+                     alt="Bolo caseiro">
+
+                <div class="card-conteudo">
+
+                    <span class="categoria">
+                        BOLOS
+                    </span>
+
+                    <h3>
+                        Bolo Caseiro
+                    </h3>
+
+                    <p>
+                        Um bolo simples e delicioso para o café da tarde.
+                    </p>
+
+                    <button
+                        class="ver-receita"
+                        data-receita="bolo-extra">
+
+                        Ver receita →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ÁREA DA FAMÍLIA -->
+    <section id="familia" class="familia">
+
+        <div class="familia-texto">
+
+            <span>❤️ Momentos especiais</span>
+
+            <h2>
+                Nossa Família
+            </h2>
+
+            <p>
+                Mais do que receitas, este livro guarda momentos,
+                encontros e histórias que fazem parte da nossa família.
+            </p>
+
+            <p>
+                Aqui podemos colocar fotos de almoços, aniversários,
+                reuniões e outros momentos especiais.
+            </p>
+
+        </div>
+
+
+        <div class="familia-fotos">
+
+            <div class="foto-familia grande">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80"
+                    alt="Família reunida">
+
+            </div>
+
+            <div class="foto-familia">
+
+                <img
+                    src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?auto=format&fit=crop&w=700&q=80"
+                    alt="Família reunida">
+
+            </div>
+
+            <div class="foto-familia">
+
+                <img
+                    src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=700&q=80"
+                    alt="Família reunida">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="final">
+
+        <div>
+
+            <span>🥰 Feito com carinho</span>
+
+            <h2>
+                Que nunca faltem histórias
+                para contar à mesa.
+            </h2>
+
+            <p>
+                Este livro é feito para guardar receitas,
+                lembranças e momentos que merecem ser lembrados.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <h3>
+            📖 Receitas da Família
+        </h3>
+
+        <p>
+            Feito com amor, comida e boas lembranças ❤️
+        </p>
+
+    </footer>
+
+
+    <!-- MODAL DE LOGIN -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-conteudo login-conteudo">
+
+            <button id="fecharLogin" class="fechar">
+                ×
+            </button>
+
+            <div class="login-icone">
+                🔐
+            </div>
+
+            <span class="login-selo">
+                ÁREA RESERVADA
+            </span>
+
+            <h2>
+                As receitas da família
+            </h2>
+
+            <p class="login-brincadeira">
+                Shhh... 🤫 Esta área é protegida para evitar que algum
+                curioso roube nossos segredos culinários!
+            </p>
+
+
+            <form id="loginForm" novalidate>
+
+                <label for="email">
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seuemail@exemplo.com"
+                    autocomplete="email"
+                    required
+                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                >
+
+
+                <label for="senha">
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite a senha da família"
+                    autocomplete="current-password"
+                    required
+                    minlength="4"
+                >
+
+
+                <button
+                    type="submit"
+                    class="botao login-submit">
+
+                    Entrar nas receitas 🔓
+
+                </button>
+
+                <p
+                    id="loginMensagem"
+                    class="login-mensagem"
+                    role="alert">
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL DA RECEITA -->
+    <div id="modal" class="modal">
+
+        <div class="modal-conteudo">
+
+            <button id="fechar" class="fechar">
+                ×
+            </button>
+
+            <span id="modalCategoria"></span>
+
+            <h2 id="modalTitulo"></h2>
+
+            <h3>
+                🛒 Ingredientes
+            </h3>
+
+            <ul id="modalIngredientes"></ul>
+
+            <h3>
+                👩‍🍳 Modo de preparo
+            </h3>
+
+            <p id="modalPreparo"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

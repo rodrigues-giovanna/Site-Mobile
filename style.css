@@ -1,0 +1,982 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #faf6f0;
+    color: #513d35;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    width: 100%;
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #fffaf5;
+
+    border-bottom: 1px solid #eadbd0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8d5149;
+}
+
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #705950;
+    font-size: 15px;
+}
+
+
+nav a:hover {
+    color: #b4625b;
+}
+
+
+/* =========================
+   BOTÃO LOGIN
+========================= */
+
+.botao-login {
+    border: 1px solid #d8b9ad;
+
+    background: #fffaf6;
+
+    color: #8f5149;
+
+    padding: 10px 15px;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.25s;
+}
+
+
+.botao-login:hover {
+    background: #a96058;
+
+    border-color: #a96058;
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(250,246,240,0.98) 0%,
+            rgba(250,246,240,0.85) 45%,
+            rgba(250,246,240,0.15) 100%
+        ),
+        url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.hero-text {
+    max-width: 570px;
+}
+
+
+.hero-text span {
+    color: #a25b53;
+
+    font-size: 16px;
+}
+
+
+.hero h1 {
+    margin-top: 18px;
+
+    font-size: 62px;
+
+    line-height: 1.05;
+
+    font-weight: normal;
+}
+
+
+.hero h1 strong {
+    display: block;
+
+    color: #a65d54;
+}
+
+
+.hero p {
+    margin-top: 25px;
+
+    max-width: 500px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #705d54;
+}
+
+
+.botao {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 25px;
+
+    background: #a96058;
+
+    color: white;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.botao:hover {
+    background: #854941;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 80px 20px;
+}
+
+
+.aspas {
+    font-size: 70px;
+
+    color: #c89084;
+
+    height: 55px;
+}
+
+
+.frase p {
+    font-size: 28px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+.frase span {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #9a8177;
+}
+
+
+/* =========================
+   SEÇÃO RECEITAS
+========================= */
+
+.receitas-section {
+    padding: 70px 7%;
+}
+
+
+.titulo-section {
+    text-align: center;
+}
+
+
+.titulo-section span {
+    color: #a65d54;
+}
+
+
+.titulo-section h2 {
+    font-size: 42px;
+
+    margin: 12px 0;
+}
+
+
+.titulo-section p {
+    color: #806d63;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 40px auto;
+
+    max-width: 900px;
+}
+
+
+.filtro {
+    border: 1px solid #decfc3;
+
+    background: #fffaf6;
+
+    color: #69564e;
+
+    padding: 11px 22px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+}
+
+
+.filtro:hover {
+    border-color: #ad675e;
+}
+
+
+.filtro.ativo {
+    background: #ad675e;
+
+    color: white;
+
+    border-color: #ad675e;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.receitas-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.receita-card {
+    background: #fffdf9;
+
+    border: 1px solid #eadbd0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+
+.receita-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(87, 57, 45, 0.10);
+}
+
+
+.receita-card img {
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.card-conteudo {
+    padding: 24px;
+}
+
+
+.categoria {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #ad5f57;
+
+    font-weight: bold;
+}
+
+
+.card-conteudo h3 {
+    margin: 10px 0;
+
+    font-size: 24px;
+}
+
+
+.card-conteudo p {
+    color: #79675f;
+
+    line-height: 1.6;
+
+    font-size: 15px;
+
+    min-height: 48px;
+}
+
+
+.ver-receita {
+    margin-top: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #a65d54;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.ver-receita:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   FAMÍLIA
+========================= */
+
+.familia {
+    margin-top: 80px;
+
+    padding: 90px 8%;
+
+    background: #eee1d7;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+.familia-texto span {
+    color: #a45b52;
+}
+
+
+.familia-texto h2 {
+    font-size: 48px;
+
+    margin: 15px 0;
+}
+
+
+.familia-texto p {
+    color: #705c53;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   FOTOS DA FAMÍLIA
+========================= */
+
+.familia-fotos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.foto-familia {
+    height: 230px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 25px rgba(65, 43, 35, 0.15);
+}
+
+
+.foto-familia.grande {
+    grid-column: span 2;
+
+    height: 300px;
+}
+
+
+.foto-familia img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.4s;
+}
+
+
+.foto-familia:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final {
+    padding: 100px 8%;
+
+    text-align: center;
+}
+
+
+.final span {
+    color: #a45b52;
+}
+
+
+.final h2 {
+    max-width: 700px;
+
+    margin: 15px auto;
+
+    font-size: 42px;
+
+    font-weight: normal;
+}
+
+
+.final p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #77665d;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #4c3932;
+
+    color: #fff5ef;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+
+footer h3 {
+    font-size: 22px;
+}
+
+
+footer p {
+    margin-top: 10px;
+
+    color: #dfccc2;
+}
+
+
+/* =========================
+   MODAIS
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(47, 33, 28, 0.70);
+
+    z-index: 500;
+
+    padding: 30px;
+
+    overflow-y: auto;
+}
+
+
+.modal.aberto {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.modal-conteudo {
+    background: #fffaf5;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 22px;
+
+    padding: 40px;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+}
+
+
+.fechar {
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 35px;
+
+    color: #795f55;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MODAL DA RECEITA
+========================= */
+
+#modalCategoria {
+    color: #a45b52;
+
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+#modalTitulo {
+    font-size: 35px;
+
+    margin: 10px 0 25px;
+}
+
+
+.modal-conteudo h3 {
+    margin-top: 25px;
+
+    margin-bottom: 10px;
+
+    color: #714d43;
+}
+
+
+#modalIngredientes {
+    padding-left: 25px;
+
+    line-height: 1.8;
+}
+
+
+#modalPreparo {
+    line-height: 1.8;
+
+    color: #6d5b52;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.login-conteudo {
+    max-width: 470px;
+
+    text-align: center;
+}
+
+
+.login-icone {
+    font-size: 42px;
+
+    margin-bottom: 8px;
+}
+
+
+.login-selo {
+    display: inline-block;
+
+    color: #a45b52;
+
+    letter-spacing: 2px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+.login-conteudo h2 {
+    font-size: 34px;
+
+    margin: 12px 0;
+}
+
+
+.login-brincadeira {
+    color: #756159;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+#loginForm {
+    text-align: left;
+}
+
+
+#loginForm label {
+    display: block;
+
+    margin: 15px 0 7px;
+
+    color: #614a42;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+#loginForm input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddcfc6;
+
+    border-radius: 12px;
+
+    background: #fffdf9;
+
+    color: #513d35;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+
+#loginForm input:focus {
+    border-color: #a96058;
+
+    box-shadow:
+        0 0 0 3px rgba(169, 96, 88, 0.10);
+}
+
+
+#loginForm input:invalid:not(:placeholder-shown) {
+    border-color: #c98278;
+}
+
+
+.login-submit {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+}
+
+
+.login-mensagem {
+    min-height: 24px;
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.login-mensagem.erro {
+    color: #a34f48;
+}
+
+
+.login-mensagem.aviso {
+    color: #95613b;
+}
+
+
+.login-mensagem.sucesso {
+    color: #5d7b57;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .receitas-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .familia {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+
+    nav {
+        gap: 10px;
+
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
+    }
+
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    .botao-login {
+        padding: 8px 11px;
+
+        font-size: 12px;
+    }
+
+
+    .hero {
+        min-height: 550px;
+
+        padding: 50px 7%;
+
+        background-position: 65% center;
+    }
+
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .receitas-section {
+        padding: 55px 5%;
+    }
+
+
+    .titulo-section h2 {
+        font-size: 34px;
+    }
+
+
+    .receitas-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .familia {
+        padding: 65px 5%;
+    }
+
+
+    .familia-texto h2 {
+        font-size: 38px;
+    }
+
+
+    .familia-fotos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .foto-familia.grande {
+        grid-column: span 1;
+    }
+
+
+    .modal {
+        padding: 15px;
+    }
+
+
+    .modal-conteudo {
+        padding: 30px 22px;
+    }
+
+
+    .login-conteudo h2 {
+        font-size: 29px;
+    }
+
+}
