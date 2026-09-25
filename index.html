@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +12,61 @@
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
     <header>
-        <div class="logo">🍰 Receitas da Família</div>
+
+        <div class="logo">
+            🍰 Receitas da Família
+        </div>
 
         <nav>
-            <a href="#receitas">Receitas</a>
-            <a href="#familia">Nossa Família</a>
 
-            <button id="abrirLogin" class="botao-login">
-                🔐 Área da família
-            </button>
+            <a href="#receitas">
+                Receitas
+            </a>
+
+            <a href="#familia">
+                Nossa Família
+            </a>
+
+            <div class="botoes-familia">
+
+                <button
+                    id="abrirLogin"
+                    class="botao-login"
+                    type="button">
+                    🔐 Área da família
+                </button>
+
+                <button
+                    id="botaoSair"
+                    class="botao-sair"
+                    type="button"
+                    style="display: none;">
+                    🚪 Sair
+                </button>
+
+            </div>
+
         </nav>
+
     </header>
 
 
-    <!-- CAPA -->
+    <!-- =========================
+         CAPA
+    ========================== -->
+
     <section class="hero">
 
         <div class="hero-text">
 
-            <span>📖 Nosso livro de receitas</span>
+            <span class="hero-selo">
+                📖 Nosso livro de receitas
+            </span>
 
             <h1>
                 Sabores que
@@ -40,10 +75,12 @@
 
             <p>
                 Receitas feitas com carinho, reunidas para guardar
-                os sabores e momentos especiais da família.
+                os sabores e momentos especiais da nossa família.
             </p>
 
-            <a href="#receitas" class="botao">
+            <a
+                href="#receitas"
+                class="botao">
                 Ver receitas
             </a>
 
@@ -52,10 +89,23 @@
     </section>
 
 
-    <!-- FRASE -->
+    <!-- =========================
+         FRASE
+    ========================== -->
+
     <section class="frase">
 
-        <div class="aspas">“</div>
+        <div class="decoracao-cozinha decoracao-1">
+            🥄
+        </div>
+
+        <div class="decoracao-cozinha decoracao-2">
+            ☕
+        </div>
+
+        <div class="aspas">
+            “
+        </div>
 
         <p>
             Uma receita pode alimentar o corpo,
@@ -63,68 +113,122 @@
             também o coração.
         </p>
 
-        <span>— Livro de Receitas da Família</span>
+        <span>
+            — Livro de Receitas da Família
+        </span>
 
     </section>
 
 
-    <!-- RECEITAS -->
-    <section id="receitas" class="receitas-section">
+    <!-- =========================
+         RECEITAS
+    ========================== -->
+
+    <section
+        id="receitas"
+        class="receitas-section">
 
         <div class="titulo-section">
 
-            <span>🍽️ Nosso caderno</span>
+            <span>
+                🍽️ Nosso caderno
+            </span>
 
             <h2>
                 Escolha uma receita
             </h2>
 
             <p>
-                Escolha uma categoria para encontrar sua receita favorita.
+                Entre na área da família para abrir e guardar
+                nossas receitas.
             </p>
 
         </div>
 
 
         <!-- FILTROS -->
+
         <div class="filtros">
 
-            <button class="filtro ativo" data-filtro="todas">
+            <button
+                class="filtro ativo"
+                data-filtro="todas"
+                type="button">
                 Todas
             </button>
 
-            <button class="filtro" data-filtro="doces">
+            <button
+                class="filtro"
+                data-filtro="doces"
+                type="button">
                 🍰 Doces
             </button>
 
-            <button class="filtro" data-filtro="bolos">
+            <button
+                class="filtro"
+                data-filtro="bolos"
+                type="button">
                 🎂 Bolos
             </button>
 
-            <button class="filtro" data-filtro="massas">
+            <button
+                class="filtro"
+                data-filtro="massas"
+                type="button">
                 🍝 Massas
             </button>
 
-            <button class="filtro" data-filtro="salgados">
+            <button
+                class="filtro"
+                data-filtro="salgados"
+                type="button">
                 🥧 Salgados
             </button>
 
-            <button class="filtro" data-filtro="bebidas">
+            <button
+                class="filtro"
+                data-filtro="bebidas"
+                type="button">
                 ☕ Bebidas
             </button>
 
         </div>
 
 
+        <!-- BOTÃO NOVA RECEITA -->
+
+        <div class="area-adicionar">
+
+            <button
+                id="abrirNovaReceita"
+                class="botao-adicionar"
+                type="button">
+                ➕ Adicionar nova receita
+            </button>
+
+        </div>
+
+
         <!-- CARDS -->
-        <div class="receitas-grid">
+
+        <div
+            id="receitasGrid"
+            class="receitas-grid">
 
 
             <!-- BOLO CHOCOLATE -->
-            <article class="receita-card" data-categoria="bolos doces">
 
-                <img src="img/bolo de chocolate.jpg"
-                     alt="Bolo de chocolate">
+            <article
+                class="receita-card"
+                data-categoria="bolos doces">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/bolo de chocolate.jpg"
+                        alt="Bolo de chocolate">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -137,15 +241,15 @@
                     </h3>
 
                     <p>
-                        Um bolo fofinho com uma deliciosa cobertura de chocolate.
+                        Um bolo fofinho com uma deliciosa
+                        cobertura de chocolate.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="bolo-chocolate">
-
+                        data-receita="bolo-chocolate"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -154,10 +258,18 @@
 
 
             <!-- BOLO CENOURA -->
-            <article class="receita-card" data-categoria="bolos">
 
-                <img src="img/bolo de cenoura.jpg"
-                     alt="Bolo de cenoura">
+            <article
+                class="receita-card"
+                data-categoria="bolos">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/bolo de cenoura.jpg"
+                        alt="Bolo de cenoura">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -170,15 +282,15 @@
                     </h3>
 
                     <p>
-                        Clássico bolo de cenoura com cobertura de chocolate.
+                        Clássico bolo de cenoura com
+                        cobertura de chocolate.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="bolo-cenoura">
-
+                        data-receita="bolo-cenoura"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -187,10 +299,18 @@
 
 
             <!-- BOLO LIMÃO -->
-            <article class="receita-card" data-categoria="bolos">
 
-                <img src="img/bolo de limao.jpg"
-                     alt="Bolo de limão">
+            <article
+                class="receita-card"
+                data-categoria="bolos">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/bolo de limao.jpg"
+                        alt="Bolo de limão">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -203,15 +323,15 @@
                     </h3>
 
                     <p>
-                        Um bolo leve, macio e com aquele sabor delicioso de limão.
+                        Um bolo leve, macio e com aquele
+                        sabor delicioso de limão.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="bolo-limao">
-
+                        data-receita="bolo-limao"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -220,10 +340,18 @@
 
 
             <!-- TORTA -->
-            <article class="receita-card" data-categoria="doces">
 
-                <img src="img/torta de morango.jpg"
-                     alt="Torta de morango">
+            <article
+                class="receita-card"
+                data-categoria="doces">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/torta de morango.jpg"
+                        alt="Torta de morango">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -241,10 +369,9 @@
 
                     <button
                         class="ver-receita"
-                        data-receita="torta-morango">
-
+                        data-receita="torta-morango"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -253,10 +380,18 @@
 
 
             <!-- BRIGADEIRO -->
-            <article class="receita-card" data-categoria="doces">
 
-                <img src="img/brigadeiro.jpg"
-                     alt="Brigadeiros">
+            <article
+                class="receita-card"
+                data-categoria="doces">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/brigadeiro.jpg"
+                        alt="Brigadeiros">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -274,10 +409,9 @@
 
                     <button
                         class="ver-receita"
-                        data-receita="brigadeiro">
-
+                        data-receita="brigadeiro"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -286,10 +420,18 @@
 
 
             <!-- LASANHA -->
-            <article class="receita-card" data-categoria="massas">
 
-                <img src="img/lasanha.jpg"
-                     alt="Lasanha">
+            <article
+                class="receita-card"
+                data-categoria="massas">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/lasanha.jpg"
+                        alt="Lasanha">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -302,15 +444,15 @@
                     </h3>
 
                     <p>
-                        Lasanha tradicional com molho, carne e queijo.
+                        Lasanha tradicional com molho,
+                        carne e queijo.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="lasanha">
-
+                        data-receita="lasanha"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -319,10 +461,18 @@
 
 
             <!-- CAFÉ -->
-            <article class="receita-card" data-categoria="bebidas">
 
-                <img src="img/cafe.jpg"
-                     alt="Café">
+            <article
+                class="receita-card"
+                data-categoria="bebidas">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/cafe.jpg"
+                        alt="Café">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -335,15 +485,15 @@
                     </h3>
 
                     <p>
-                        Um café especial para acompanhar boas conversas.
+                        Um café especial para acompanhar
+                        boas conversas.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="cafe">
-
+                        data-receita="cafe"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -352,10 +502,18 @@
 
 
             <!-- BOLO EXTRA -->
-            <article class="receita-card" data-categoria="bolos">
 
-                <img src="img/bolo.jpg"
-                     alt="Bolo caseiro">
+            <article
+                class="receita-card"
+                data-categoria="bolos">
+
+                <div class="imagem-card">
+
+                    <img
+                        src="img/bolo.jpg"
+                        alt="Bolo caseiro">
+
+                </div>
 
                 <div class="card-conteudo">
 
@@ -368,15 +526,15 @@
                     </h3>
 
                     <p>
-                        Um bolo simples e delicioso para o café da tarde.
+                        Um bolo simples e delicioso
+                        para o café da tarde.
                     </p>
 
                     <button
                         class="ver-receita"
-                        data-receita="bolo-extra">
-
+                        data-receita="bolo-extra"
+                        type="button">
                         Ver receita →
-
                     </button>
 
                 </div>
@@ -388,12 +546,19 @@
     </section>
 
 
-    <!-- ÁREA DA FAMÍLIA -->
-    <section id="familia" class="familia">
+    <!-- =========================
+         NOSSA FAMÍLIA
+    ========================== -->
+
+    <section
+        id="familia"
+        class="familia">
 
         <div class="familia-texto">
 
-            <span>❤️ Momentos especiais</span>
+            <span>
+                ❤️ Momentos especiais
+            </span>
 
             <h2>
                 Nossa Família
@@ -426,7 +591,7 @@
 
                 <img
                     src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?auto=format&fit=crop&w=700&q=80"
-                    alt="Família reunida">
+                    alt="Momento especial em família">
 
             </div>
 
@@ -434,7 +599,7 @@
 
                 <img
                     src="https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=700&q=80"
-                    alt="Família reunida">
+                    alt="Viagem em família">
 
             </div>
 
@@ -443,12 +608,21 @@
     </section>
 
 
-    <!-- FINAL -->
+    <!-- =========================
+         FINAL
+    ========================== -->
+
     <section class="final">
 
-        <div>
+        <div class="final-conteudo">
 
-            <span>🥰 Feito com carinho</span>
+            <div class="final-utensilios">
+                🍰 &nbsp; 🥣 &nbsp; ☕ &nbsp; 🥄
+            </div>
+
+            <span>
+                🥰 Feito com carinho
+            </span>
 
             <h2>
                 Que nunca faltem histórias
@@ -465,7 +639,10 @@
     </section>
 
 
-    <!-- RODAPÉ -->
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
     <footer>
 
         <h3>
@@ -479,12 +656,20 @@
     </footer>
 
 
-    <!-- MODAL DE LOGIN -->
-    <div id="loginModal" class="modal">
+    <!-- =========================
+         MODAL LOGIN
+    ========================== -->
+
+    <div
+        id="loginModal"
+        class="modal">
 
         <div class="modal-conteudo login-conteudo">
 
-            <button id="fecharLogin" class="fechar">
+            <button
+                id="fecharLogin"
+                class="fechar"
+                type="button">
                 ×
             </button>
 
@@ -501,12 +686,14 @@
             </h2>
 
             <p class="login-brincadeira">
-                Shhh... 🤫 Esta área é protegida para evitar que algum
-                curioso roube nossos segredos culinários!
+                Shhh... 🤫 Esta área é protegida para evitar
+                que algum curioso roube nossos segredos culinários!
             </p>
 
 
-            <form id="loginForm" novalidate>
+            <form
+                id="loginForm"
+                novalidate>
 
                 <label for="email">
                     E-mail
@@ -515,12 +702,9 @@
                 <input
                     type="email"
                     id="email"
-                    name="email"
                     placeholder="seuemail@exemplo.com"
                     autocomplete="email"
-                    required
-                    pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-                >
+                    required>
 
 
                 <label for="senha">
@@ -530,26 +714,20 @@
                 <input
                     type="password"
                     id="senha"
-                    name="senha"
                     placeholder="Digite a senha da família"
                     autocomplete="current-password"
-                    required
-                    minlength="4"
-                >
+                    required>
 
 
                 <button
                     type="submit"
                     class="botao login-submit">
-
                     Entrar nas receitas 🔓
-
                 </button>
 
                 <p
                     id="loginMensagem"
-                    class="login-mensagem"
-                    role="alert">
+                    class="login-mensagem">
                 </p>
 
             </form>
@@ -559,14 +737,224 @@
     </div>
 
 
-    <!-- MODAL DA RECEITA -->
-    <div id="modal" class="modal">
+    <!-- =========================
+         MODAL BOAS-VINDAS
+    ========================== -->
+
+    <div
+        id="boasVindasModal"
+        class="modal">
+
+        <div class="modal-conteudo boas-vindas">
+
+            <button
+                id="fecharBoasVindas"
+                class="fechar"
+                type="button">
+                ×
+            </button>
+
+            <div class="boas-icone">
+                🍰
+            </div>
+
+            <span class="login-selo">
+                BEM-VINDO(A)
+            </span>
+
+            <h2>
+                Que bom ter você aqui! ❤️
+            </h2>
+
+            <p>
+                A área da família está aberta.
+                Agora você pode abrir nossas receitas
+                e guardar novas delícias.
+            </p>
+
+            <div class="aviso-data"  style="margin-top: 24px;">
+
+                📅 <strong>Atualização especial em 30/09</strong>
+
+                <br>
+
+                Teremos novidades no nosso livro de receitas!
+
+            </div>
+
+            <button
+                id="continuarBoasVindas"
+                class="botao"
+                type="button">
+                Vamos cozinhar! 🍰
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL NOVA RECEITA
+    ========================== -->
+
+    <div
+        id="novaReceitaModal"
+        class="modal">
 
         <div class="modal-conteudo">
 
-            <button id="fechar" class="fechar">
+            <button
+                id="fecharNovaReceita"
+                class="fechar"
+                type="button">
                 ×
             </button>
+
+            <span class="login-selo">
+                NOVA RECEITA
+            </span>
+
+            <h2>
+                Adicionar uma receita ❤️
+            </h2>
+
+            <p class="texto-modal">
+                Vamos guardar mais uma receita especial
+                no nosso livro da família.
+            </p>
+
+
+            <form id="novaReceitaForm">
+
+                <label for="novaCategoria">
+                    Categoria
+                </label>
+
+                <select id="novaCategoria" required>
+
+                    <option value="">
+                        Escolha uma categoria
+                    </option>
+
+                    <option value="bolos">
+                        🎂 Bolos
+                    </option>
+
+                    <option value="doces">
+                        🍰 Doces
+                    </option>
+
+                    <option value="massas">
+                        🍝 Massas
+                    </option>
+
+                    <option value="salgados">
+                        🥧 Salgados
+                    </option>
+
+                    <option value="bebidas">
+                        ☕ Bebidas
+                    </option>
+
+                </select>
+
+
+                <label for="novaTitulo">
+                    Nome da receita
+                </label>
+
+                <input
+                    type="text"
+                    id="novaTitulo"
+                    placeholder="Ex.: Pudim da Vovó"
+                    required>
+
+
+                <label for="novaDescricao">
+                    Pequena descrição
+                </label>
+
+                <input
+                    type="text"
+                    id="novaDescricao"
+                    placeholder="Conte um pouquinho sobre ela"
+                    required>
+
+
+                <label for="novaIngredientes">
+                    Ingredientes
+                </label>
+
+                <textarea
+                    id="novaIngredientes"
+                    placeholder="Um ingrediente por linha"
+                    required></textarea>
+
+
+                <label for="novoPreparo">
+                    Modo de preparo
+                </label>
+
+                <textarea
+                    id="novoPreparo"
+                    placeholder="Explique como preparar a receita"
+                    required></textarea>
+
+
+                <label for="novaImagem">
+                    Foto da receita
+                </label>
+
+                <input
+                    type="file"
+                    id="novaImagem"
+                    accept="image/*">
+
+                <img
+                    id="previewImagem"
+                    alt="Prévia da imagem">
+
+
+                <button
+                    type="submit"
+                    class="botao">
+                    💾 Guardar receita
+                </button>
+
+                <p
+                    id="novaReceitaMensagem"
+                    class="login-mensagem">
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MODAL DA RECEITA
+    ========================== -->
+
+    <div
+        id="modal"
+        class="modal">
+
+        <div class="modal-conteudo modal-receita">
+
+            <button
+                id="fechar"
+                class="fechar"
+                type="button">
+                ×
+            </button>
+
+            <img
+                id="modalImagem"
+                class="modal-imagem"
+                alt="Imagem da receita">
 
             <span id="modalCategoria"></span>
 
@@ -592,4 +980,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

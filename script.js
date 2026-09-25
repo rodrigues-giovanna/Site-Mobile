@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =========================
+    /* =====================================================
        RECEITAS
-    ========================= */
+    ===================================================== */
 
     const receitas = {
 
         "bolo-chocolate": {
             categoria: "BOLOS",
             titulo: "Bolo de Chocolate",
+            imagem: "img/bolo de chocolate.jpg",
 
             ingredientes: [
                 "3 ovos",
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "bolo-cenoura": {
             categoria: "BOLOS",
             titulo: "Bolo de Cenoura",
+            imagem: "img/bolo de cenoura.jpg",
 
             ingredientes: [
                 "3 cenouras médias",
@@ -47,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "bolo-limao": {
             categoria: "BOLOS",
             titulo: "Bolo de Limão",
+            imagem: "img/bolo de limao.jpg",
 
             ingredientes: [
                 "3 ovos",
@@ -66,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "torta-morango": {
             categoria: "DOCES",
             titulo: "Torta de Morango",
+            imagem: "img/torta de morango.jpg",
 
             ingredientes: [
                 "1 pacote de biscoito maisena",
@@ -83,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "brigadeiro": {
             categoria: "DOCES",
             titulo: "Brigadeiro",
+            imagem: "img/brigadeiro.jpg",
 
             ingredientes: [
                 "1 lata de leite condensado",
@@ -99,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "lasanha": {
             categoria: "MASSAS",
             titulo: "Lasanha da Família",
+            imagem: "img/lasanha.jpg",
 
             ingredientes: [
                 "500 g de massa para lasanha",
@@ -118,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "cafe": {
             categoria: "BEBIDAS",
             titulo: "Café da Família",
+            imagem: "img/cafe.jpg",
 
             ingredientes: [
                 "500 ml de água",
@@ -133,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "bolo-extra": {
             categoria: "BOLOS",
             titulo: "Bolo Caseiro",
+            imagem: "img/bolo.jpg",
 
             ingredientes: [
                 "3 ovos",
@@ -150,9 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* =========================
-       LOGIN
-    ========================= */
+    /* =====================================================
+       ELEMENTOS
+    ===================================================== */
 
     const loginModal =
         document.getElementById("loginModal");
@@ -162,6 +170,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const fecharLogin =
         document.getElementById("fecharLogin");
+
+    const botaoSair =
+        document.getElementById("botaoSair");
 
     const loginForm =
         document.getElementById("loginForm");
@@ -176,40 +187,142 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("loginMensagem");
 
 
+    const modal =
+        document.getElementById("modal");
+
+    const fechar =
+        document.getElementById("fechar");
+
+    const modalImagem =
+        document.getElementById("modalImagem");
+
+    const modalCategoria =
+        document.getElementById("modalCategoria");
+
+    const modalTitulo =
+        document.getElementById("modalTitulo");
+
+    const modalIngredientes =
+        document.getElementById("modalIngredientes");
+
+    const modalPreparo =
+        document.getElementById("modalPreparo");
+
+
+    const boasVindasModal =
+        document.getElementById("boasVindasModal");
+
+    const fecharBoasVindas =
+        document.getElementById("fecharBoasVindas");
+
+    const continuarBoasVindas =
+        document.getElementById("continuarBoasVindas");
+
+
+    const novaReceitaModal =
+        document.getElementById("novaReceitaModal");
+
+    const abrirNovaReceita =
+        document.getElementById("abrirNovaReceita");
+
+    const fecharNovaReceita =
+        document.getElementById("fecharNovaReceita");
+
+    const novaReceitaForm =
+        document.getElementById("novaReceitaForm");
+
+    const novaCategoria =
+        document.getElementById("novaCategoria");
+
+    const novaTitulo =
+        document.getElementById("novaTitulo");
+
+    const novaDescricao =
+        document.getElementById("novaDescricao");
+
+    const novaIngredientes =
+        document.getElementById("novaIngredientes");
+
+    const novoPreparo =
+        document.getElementById("novoPreparo");
+
+    const novaImagem =
+        document.getElementById("novaImagem");
+
+    const previewImagem =
+        document.getElementById("previewImagem");
+
+    const novaReceitaMensagem =
+        document.getElementById("novaReceitaMensagem");
+
+    const receitasGrid =
+        document.getElementById("receitasGrid");
+
+
     let usuarioLogado = false;
 
+    let imagemNovaReceita = "";
 
-    function abrirModalLogin() {
 
-        loginModal.classList.add("aberto");
+    /* =====================================================
+       FUNÇÕES DE MODAL
+    ===================================================== */
+
+    function abrirModal(elemento) {
+
+        if (!elemento) {
+            return;
+        }
+
+        elemento.classList.add("aberto");
 
         document.body.style.overflow = "hidden";
-
-        setTimeout(function () {
-            emailInput.focus();
-        }, 100);
-
     }
 
 
-    function fecharModalLogin() {
+    function fecharModalGenerico(elemento) {
 
-        loginModal.classList.remove("aberto");
+        if (!elemento) {
+            return;
+        }
 
-        document.body.style.overflow = "";
+        elemento.classList.remove("aberto");
 
+        const algumModalAberto =
+            document.querySelector(".modal.aberto");
+
+        if (!algumModalAberto) {
+            document.body.style.overflow = "";
+        }
     }
 
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
 
     abrirLogin.addEventListener(
         "click",
-        abrirModalLogin
+        function () {
+
+            if (usuarioLogado) {
+                return;
+            }
+
+            abrirModal(loginModal);
+
+            setTimeout(function () {
+                emailInput.focus();
+            }, 100);
+        }
     );
 
 
     fecharLogin.addEventListener(
         "click",
-        fecharModalLogin
+        function () {
+            fecharModalGenerico(loginModal);
+        }
     );
 
 
@@ -218,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function (evento) {
 
             if (evento.target === loginModal) {
-                fecharModalLogin();
+                fecharModalGenerico(loginModal);
             }
 
         }
@@ -239,56 +352,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 senhaInput.value;
 
 
-            /*
-                E-mail precisa obrigatoriamente ter:
-                - algo antes do @
-                - @
-                - algo depois do @
-                - ponto
-                - algo depois do ponto
-            */
+            const EMAIL_CORRETO =
+                "minhafamilia@gmail.com";
 
-           const EMAIL_CORRETO = "minhafamilia@gmail.com";
-const SENHA_CORRETA = "minhafamilia";
+            const SENHA_CORRETA =
+                "minhafamilia";
 
 
-if (email !== EMAIL_CORRETO) {
+            if (email !== EMAIL_CORRETO) {
 
-    loginMensagem.textContent =
-        "📧 E-mail incorreto! Só a família tem acesso às receitas. 🤫";
+                loginMensagem.textContent =
+                    "📧 E-mail incorreto! Só a família tem acesso às receitas. 🤫";
 
-    loginMensagem.className =
-        "login-mensagem erro";
+                loginMensagem.className =
+                    "login-mensagem erro";
 
-    emailInput.focus();
+                emailInput.focus();
 
-    return;
-}
-
-
-if (senha !== SENHA_CORRETA) {
-
-    loginMensagem.textContent =
-        "🔒 Senha incorreta! Essa receita é segredo de família. 🤫";
-
-    loginMensagem.className =
-        "login-mensagem erro";
-
-    senhaInput.focus();
-
-    return;
-}
+                return;
+            }
 
 
-            /*
-                LOGIN ACEITO
-            */
+            if (senha !== SENHA_CORRETA) {
+
+                loginMensagem.textContent =
+                    "🔒 Senha incorreta! Essa receita é segredo de família. 🤫";
+
+                loginMensagem.className =
+                    "login-mensagem erro";
+
+                senhaInput.focus();
+
+                return;
+            }
+
+
+            /* LOGIN ACEITO */
 
             usuarioLogado = true;
 
 
             loginMensagem.textContent =
-                "🎉 Acesso liberado! Agora as receitas estão a salvo.";
+                "🎉 Acesso liberado!";
 
             loginMensagem.className =
                 "login-mensagem sucesso";
@@ -297,10 +402,13 @@ if (senha !== SENHA_CORRETA) {
             abrirLogin.textContent =
                 "🔓 Família conectada";
 
+            botaoSair.style.display =
+                "inline-block";
+
 
             setTimeout(function () {
 
-                fecharModalLogin();
+                fecharModalGenerico(loginModal);
 
                 loginForm.reset();
 
@@ -309,196 +417,262 @@ if (senha !== SENHA_CORRETA) {
                 loginMensagem.className =
                     "login-mensagem";
 
-            }, 900);
+
+                abrirModal(boasVindasModal);
+
+            }, 700);
 
         }
     );
 
 
-    /* =========================
+    /* =====================================================
+       BOAS-VINDAS
+    ===================================================== */
+
+    fecharBoasVindas.addEventListener(
+        "click",
+        function () {
+            fecharModalGenerico(boasVindasModal);
+        }
+    );
+
+
+    continuarBoasVindas.addEventListener(
+        "click",
+        function () {
+            fecharModalGenerico(boasVindasModal);
+        }
+    );
+
+
+    boasVindasModal.addEventListener(
+        "click",
+        function (evento) {
+
+            if (evento.target === boasVindasModal) {
+                fecharModalGenerico(boasVindasModal);
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       SAIR
+    ===================================================== */
+
+    botaoSair.addEventListener(
+        "click",
+        function () {
+
+            usuarioLogado = false;
+
+
+            abrirLogin.textContent =
+                "🔐 Área da família";
+
+            botaoSair.style.display =
+                "none";
+
+
+            fecharModalGenerico(boasVindasModal);
+            fecharModalGenerico(novaReceitaModal);
+            fecharModalGenerico(modal);
+
+
+            loginMensagem.textContent =
+                "";
+
+            loginMensagem.className =
+                "login-mensagem";
+
+
+            abrirModal(loginModal);
+
+        }
+    );
+
+
+    /* =====================================================
        FILTROS
-    ========================= */
+    ===================================================== */
 
-    const filtros =
-        document.querySelectorAll(".filtro");
+    function aplicarFiltro(filtroSelecionado) {
 
-    const cards =
-        document.querySelectorAll(".receita-card");
+        const filtros =
+            document.querySelectorAll(".filtro");
 
-
-    filtros.forEach(function (botao) {
-
-        botao.addEventListener(
-            "click",
-            function () {
-
-                const filtroSelecionado =
-                    botao.getAttribute("data-filtro");
+        const cards =
+            document.querySelectorAll(".receita-card");
 
 
-                filtros.forEach(function (item) {
+        filtros.forEach(function (botao) {
 
-                    item.classList.remove("ativo");
-
-                });
-
+            if (
+                botao.getAttribute("data-filtro") ===
+                filtroSelecionado
+            ) {
 
                 botao.classList.add("ativo");
 
+            } else {
 
-                cards.forEach(function (card) {
-
-                    const categorias =
-                        card.getAttribute("data-categoria");
-
-
-                    if (
-                        filtroSelecionado === "todas" ||
-                        categorias.includes(filtroSelecionado)
-                    ) {
-
-                        card.style.display =
-                            "block";
-
-                    } else {
-
-                        card.style.display =
-                            "none";
-
-                    }
-
-                });
+                botao.classList.remove("ativo");
 
             }
-        );
 
-    });
-
-
-    /* =========================
-       MODAL DAS RECEITAS
-    ========================= */
-
-    const modal =
-        document.getElementById("modal");
-
-    const fechar =
-        document.getElementById("fechar");
-
-    const modalCategoria =
-        document.getElementById("modalCategoria");
-
-    const modalTitulo =
-        document.getElementById("modalTitulo");
-
-    const modalIngredientes =
-        document.getElementById("modalIngredientes");
-
-    const modalPreparo =
-        document.getElementById("modalPreparo");
+        });
 
 
-    const botoesReceita =
-        document.querySelectorAll(".ver-receita");
+        cards.forEach(function (card) {
+
+            const categorias =
+                card.getAttribute("data-categoria") || "";
 
 
-    botoesReceita.forEach(function (botao) {
+            if (
+                filtroSelecionado === "todas" ||
+                categorias.includes(filtroSelecionado)
+            ) {
 
-        botao.addEventListener(
-            "click",
-            function () {
+                card.style.display = "";
 
+            } else {
 
-                /*
-                    Se ainda não fez login,
-                    abre a tela de login.
-                */
-
-                if (!usuarioLogado) {
-
-                    loginMensagem.textContent =
-                        "🔒 Primeiro entre na área da família para proteger nossas receitas!";
-
-                    loginMensagem.className =
-                        "login-mensagem aviso";
-
-                    abrirModalLogin();
-
-                    return;
-                }
-
-
-                const id =
-                    botao.getAttribute("data-receita");
-
-
-                const receita =
-                    receitas[id];
-
-
-                if (!receita) {
-                    return;
-                }
-
-
-                modalCategoria.textContent =
-                    receita.categoria;
-
-
-                modalTitulo.textContent =
-                    receita.titulo;
-
-
-                modalIngredientes.innerHTML =
-                    "";
-
-
-                receita.ingredientes.forEach(
-                    function (ingrediente) {
-
-                        const li =
-                            document.createElement("li");
-
-                        li.textContent =
-                            ingrediente;
-
-                        modalIngredientes.appendChild(li);
-
-                    }
-                );
-
-
-                modalPreparo.textContent =
-                    receita.preparo;
-
-
-                modal.classList.add("aberto");
-
-                document.body.style.overflow =
-                    "hidden";
+                card.style.display = "none";
 
             }
-        );
 
-    });
-
-
-    /* =========================
-       FECHAR MODAL
-    ========================= */
-
-    function fecharModal() {
-
-        modal.classList.remove("aberto");
-
-        document.body.style.overflow = "";
+        });
 
     }
 
 
+    document.querySelectorAll(".filtro").forEach(
+        function (botao) {
+
+            botao.addEventListener(
+                "click",
+                function () {
+
+                    aplicarFiltro(
+                        botao.getAttribute("data-filtro")
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ABRIR RECEITA
+    ===================================================== */
+
+    function abrirReceita(id) {
+
+        if (!usuarioLogado) {
+
+            loginMensagem.textContent =
+                "🔒 Primeiro entre na área da família para abrir nossas receitas!";
+
+            loginMensagem.className =
+                "login-mensagem aviso";
+
+            abrirModal(loginModal);
+
+            return;
+        }
+
+
+        const receita =
+            receitas[id];
+
+
+        if (!receita) {
+            return;
+        }
+
+
+        modalCategoria.textContent =
+            receita.categoria;
+
+        modalTitulo.textContent =
+            receita.titulo;
+
+        modalImagem.src =
+            receita.imagem;
+
+        modalImagem.alt =
+            receita.titulo;
+
+
+        modalIngredientes.innerHTML =
+            "";
+
+
+        receita.ingredientes.forEach(
+            function (ingrediente) {
+
+                const li =
+                    document.createElement("li");
+
+                li.textContent =
+                    ingrediente;
+
+                modalIngredientes.appendChild(li);
+
+            }
+        );
+
+
+        modalPreparo.textContent =
+            receita.preparo;
+
+
+        abrirModal(modal);
+
+    }
+
+
+    /* =====================================================
+       CLIQUE NOS CARDS
+    ===================================================== */
+
+    receitasGrid.addEventListener(
+        "click",
+        function (evento) {
+
+            const botao =
+                evento.target.closest(".ver-receita");
+
+
+            if (!botao) {
+                return;
+            }
+
+
+            const id =
+                botao.getAttribute("data-receita");
+
+
+            abrirReceita(id);
+
+        }
+    );
+
+
+    /* =====================================================
+       FECHAR RECEITA
+    ===================================================== */
+
     fechar.addEventListener(
         "click",
-        fecharModal
+        function () {
+            fecharModalGenerico(modal);
+        }
     );
 
 
@@ -507,28 +681,470 @@ if (senha !== SENHA_CORRETA) {
         function (evento) {
 
             if (evento.target === modal) {
-                fecharModal();
+                fecharModalGenerico(modal);
             }
 
         }
     );
 
 
-    /* =========================
-       TECLA ESC
-    ========================= */
+    /* =====================================================
+       NOVA RECEITA
+    ===================================================== */
+
+    abrirNovaReceita.addEventListener(
+        "click",
+        function () {
+
+            if (!usuarioLogado) {
+
+                loginMensagem.textContent =
+                    "🔒 Entre na área da família antes de adicionar uma receita.";
+
+                loginMensagem.className =
+                    "login-mensagem aviso";
+
+                abrirModal(loginModal);
+
+                return;
+            }
+
+
+            abrirModal(novaReceitaModal);
+
+        }
+    );
+
+
+    fecharNovaReceita.addEventListener(
+        "click",
+        function () {
+            fecharModalGenerico(novaReceitaModal);
+        }
+    );
+
+
+    novaReceitaModal.addEventListener(
+        "click",
+        function (evento) {
+
+            if (evento.target === novaReceitaModal) {
+                fecharModalGenerico(novaReceitaModal);
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       PREVIEW DA FOTO
+    ===================================================== */
+
+    novaImagem.addEventListener(
+        "change",
+        function () {
+
+            const arquivo =
+                novaImagem.files[0];
+
+
+            if (!arquivo) {
+
+                imagemNovaReceita = "";
+
+                previewImagem.style.display =
+                    "none";
+
+                return;
+            }
+
+
+            const leitor =
+                new FileReader();
+
+
+            leitor.onload =
+                function (evento) {
+
+                    imagemNovaReceita =
+                        evento.target.result;
+
+
+                    previewImagem.src =
+                        imagemNovaReceita;
+
+                    previewImagem.style.display =
+                        "block";
+
+                };
+
+
+            leitor.readAsDataURL(arquivo);
+
+        }
+    );
+
+
+    /* =====================================================
+       CRIAR CARD
+    ===================================================== */
+
+    function criarCardReceita(
+        id,
+        receita
+    ) {
+
+        const article =
+            document.createElement("article");
+
+
+        article.className =
+            "receita-card";
+
+
+        article.setAttribute(
+            "data-categoria",
+            receita.categoriaFiltro
+        );
+
+
+        article.setAttribute(
+            "data-nova-receita",
+            "true"
+        );
+
+
+        article.innerHTML = `
+
+            <div class="imagem-card">
+
+                <img
+                    src="${receita.imagem}"
+                    alt="${escapeHtml(receita.titulo)}">
+
+            </div>
+
+            <div class="card-conteudo">
+
+                <span class="categoria">
+                    ${escapeHtml(receita.categoria)}
+                </span>
+
+                <h3>
+                    ${escapeHtml(receita.titulo)}
+                </h3>
+
+                <p>
+                    ${escapeHtml(receita.descricao)}
+                </p>
+
+                <button
+                    class="ver-receita"
+                    data-receita="${id}"
+                    type="button">
+                    Ver receita →
+                </button>
+
+            </div>
+
+        `;
+
+
+        receitasGrid.appendChild(article);
+
+    }
+
+
+    /* =====================================================
+       SEGURANÇA DO TEXTO DOS NOVOS CARDS
+    ===================================================== */
+
+    function escapeHtml(texto) {
+
+        const div =
+            document.createElement("div");
+
+        div.textContent =
+            texto;
+
+        return div.innerHTML;
+
+    }
+
+
+    /* =====================================================
+       SALVAR NOVA RECEITA
+    ===================================================== */
+
+    function carregarNovasReceitas() {
+
+        let salvas = [];
+
+
+        try {
+
+            salvas =
+                JSON.parse(
+                    localStorage.getItem(
+                        "receitasFamiliaNovas"
+                    )
+                ) || [];
+
+        } catch (erro) {
+
+            salvas = [];
+
+        }
+
+
+        salvas.forEach(
+            function (item) {
+
+                receitas[item.id] =
+                    item.receita;
+
+
+                criarCardReceita(
+                    item.id,
+                    item.receita
+                );
+
+            }
+        );
+
+    }
+
+
+    carregarNovasReceitas();
+
+
+    novaReceitaForm.addEventListener(
+        "submit",
+        function (evento) {
+
+            evento.preventDefault();
+
+
+            if (!usuarioLogado) {
+
+                fecharModalGenerico(
+                    novaReceitaModal
+                );
+
+                abrirModal(loginModal);
+
+                return;
+            }
+
+
+            const categoriaFiltro =
+                novaCategoria.value;
+
+            const titulo =
+                novaTitulo.value.trim();
+
+            const descricao =
+                novaDescricao.value.trim();
+
+            const ingredientesTexto =
+                novaIngredientes.value.trim();
+
+            const preparo =
+                novoPreparo.value.trim();
+
+
+            if (
+                !categoriaFiltro ||
+                !titulo ||
+                !descricao ||
+                !ingredientesTexto ||
+                !preparo
+            ) {
+
+                novaReceitaMensagem.textContent =
+                    "⚠️ Preencha todos os campos da receita.";
+
+                novaReceitaMensagem.className =
+                    "login-mensagem erro";
+
+                return;
+            }
+
+
+            const nomesCategorias = {
+
+                bolos: "BOLOS",
+
+                doces: "DOCES",
+
+                massas: "MASSAS",
+
+                salgados: "SALGADOS",
+
+                bebidas: "BEBIDAS"
+
+            };
+
+
+            const id =
+                "nova-" +
+                Date.now();
+
+
+            const receitaNova = {
+
+                categoria:
+                    nomesCategorias[categoriaFiltro],
+
+                categoriaFiltro:
+                    categoriaFiltro,
+
+                titulo:
+                    titulo,
+
+                descricao:
+                    descricao,
+
+                imagem:
+                    imagemNovaReceita ||
+                    "img/bolo.jpg",
+
+                ingredientes:
+                    ingredientesTexto
+                        .split("\n")
+                        .map(function (item) {
+                            return item.trim();
+                        })
+                        .filter(function (item) {
+                            return item.length > 0;
+                        }),
+
+                preparo:
+                    preparo
+
+            };
+
+
+            receitas[id] =
+                receitaNova;
+
+
+            criarCardReceita(
+                id,
+                receitaNova
+            );
+
+
+            let salvas = [];
+
+
+            try {
+
+                salvas =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "receitasFamiliaNovas"
+                        )
+                    ) || [];
+
+            } catch (erro) {
+
+                salvas = [];
+
+            }
+
+
+            salvas.push({
+
+                id:
+                    id,
+
+                receita:
+                    receitaNova
+
+            });
+
+
+            try {
+
+                localStorage.setItem(
+                    "receitasFamiliaNovas",
+                    JSON.stringify(salvas)
+                );
+
+            } catch (erro) {
+
+                console.warn(
+                    "Não foi possível salvar a receita no navegador."
+                );
+
+            }
+
+
+            novaReceitaMensagem.textContent =
+                "🎉 Receita guardada no livro da família!";
+
+
+            novaReceitaMensagem.className =
+                "login-mensagem sucesso";
+
+
+            setTimeout(
+                function () {
+
+                    novaReceitaForm.reset();
+
+                    imagemNovaReceita = "";
+
+                    previewImagem.src =
+                        "";
+
+                    previewImagem.style.display =
+                        "none";
+
+                    novaReceitaMensagem.textContent =
+                        "";
+
+                    novaReceitaMensagem.className =
+                        "login-mensagem";
+
+
+                    fecharModalGenerico(
+                        novaReceitaModal
+                    );
+
+                },
+                1000
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC FECHA OS MODAIS
+    ===================================================== */
 
     document.addEventListener(
         "keydown",
         function (evento) {
 
-            if (evento.key === "Escape") {
-
-                fecharModal();
-
-                fecharModalLogin();
-
+            if (evento.key !== "Escape") {
+                return;
             }
+
+
+            document.querySelectorAll(
+                ".modal.aberto"
+            ).forEach(
+                function (elemento) {
+
+                    fecharModalGenerico(
+                        elemento
+                    );
+
+                }
+            );
 
         }
     );

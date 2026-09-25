@@ -1,3 +1,8 @@
+/* =========================================================
+   RECEITAS DA FAMÍLIA
+   TEMA: LIVRO DE RECEITAS / COZINHA / MARROM CLARO
+========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,217 +15,273 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #faf6f0;
-    color: #513d35;
+    background: #e3c5a5;
+    color: #4b342b;
+    overflow-x: hidden;
 }
 
-
-/* =========================
+/* =========================================================
    CABEÇALHO
-========================= */
+========================================================= */
 
 header {
     width: 100%;
-    padding: 20px 7%;
+    padding: 18px 7%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    background: #fffaf5;
+    background: #f0dcc5;
 
-    border-bottom: 1px solid #eadbd0;
+    border-bottom: 2px solid #c49b79;
 
     position: sticky;
     top: 0;
     z-index: 100;
-}
 
+    box-shadow: 0 4px 15px rgba(72, 45, 32, 0.10);
+}
 
 .logo {
-    font-size: 22px;
+    font-size: 23px;
     font-weight: bold;
-    color: #8d5149;
+    color: #604237;
 }
-
 
 nav {
     display: flex;
-    gap: 25px;
+    gap: 24px;
     align-items: center;
 }
 
-
 nav a {
     text-decoration: none;
-    color: #705950;
+    color: #65483b;
     font-size: 15px;
+    transition: 0.2s;
 }
-
 
 nav a:hover {
-    color: #b4625b;
+    color: #8b5d45;
 }
 
+.botoes-familia {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-/* =========================
-   BOTÃO LOGIN
-========================= */
+/* =========================================================
+   BOTÕES DO CABEÇALHO
+========================================================= */
 
-.botao-login {
-    border: 1px solid #d8b9ad;
+.botao-login,
+.botao-sair {
+    border: 1px solid #b98d6b;
+    background: #e8c9a9;
+    color: #5e4032;
 
-    background: #fffaf6;
+    padding: 10px 16px;
 
-    color: #8f5149;
-
-    padding: 10px 15px;
-
-    border-radius: 22px;
+    border-radius: 24px;
 
     cursor: pointer;
 
     font-family: inherit;
-
     font-size: 14px;
-
     font-weight: bold;
 
     transition: 0.25s;
 }
 
-
-.botao-login:hover {
-    background: #a96058;
-
-    border-color: #a96058;
-
+.botao-login:hover,
+.botao-sair:hover {
+    background: #7b5442;
+    border-color: #7b5442;
     color: white;
 
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 570px;
-
-    display: flex;
-
-    align-items: center;
-
-    padding: 80px 8%;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(250,246,240,0.98) 0%,
-            rgba(250,246,240,0.85) 45%,
-            rgba(250,246,240,0.15) 100%
-        ),
-        url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-
-.hero-text {
-    max-width: 570px;
-}
-
-
-.hero-text span {
-    color: #a25b53;
-
-    font-size: 16px;
-}
-
-
-.hero h1 {
-    margin-top: 18px;
-
-    font-size: 62px;
-
-    line-height: 1.05;
-
-    font-weight: normal;
-}
-
-
-.hero h1 strong {
-    display: block;
-
-    color: #a65d54;
-}
-
-
-.hero p {
-    margin-top: 25px;
-
-    max-width: 500px;
-
-    font-size: 18px;
-
-    line-height: 1.7;
-
-    color: #705d54;
-}
-
+/* =========================================================
+   BOTÕES GERAIS
+========================================================= */
 
 .botao {
     display: inline-block;
 
-    margin-top: 30px;
+    margin-top: 28px;
 
-    padding: 14px 25px;
+    padding: 14px 27px;
 
-    background: #a96058;
-
+    background: #795343;
     color: white;
 
     border-radius: 30px;
 
     text-decoration: none;
 
+    font-weight: bold;
+
     transition: 0.3s;
+
+    box-shadow: 0 8px 18px rgba(82, 51, 38, 0.18);
 }
 
-
 .botao:hover {
-    background: #854941;
-
+    background: #5f3f32;
     transform: translateY(-2px);
 }
 
+/* =========================================================
+   HERO
+========================================================= */
 
-/* =========================
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 8%;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(76, 48, 37, 0.88) 0%,
+            rgba(91, 58, 43, 0.65) 45%,
+            rgba(91, 58, 43, 0.12) 100%
+        ),
+        url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+
+    color: white;
+}
+
+.hero::after {
+    content: "🥄   ☕   🥣";
+
+    position: absolute;
+
+    right: 7%;
+    bottom: 35px;
+
+    font-size: 27px;
+
+    letter-spacing: 7px;
+
+    opacity: 0.75;
+}
+
+.hero-text {
+    max-width: 620px;
+
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text span {
+    display: inline-block;
+
+    color: #f1d3b4;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    margin-top: 5px;
+
+    font-size: 64px;
+
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    color: #fff8ef;
+
+    text-shadow: 0 3px 12px rgba(45, 25, 18, 0.3);
+}
+
+.hero h1 strong {
+    display: block;
+
+    color: #f0c99e;
+}
+
+.hero p {
+    margin-top: 25px;
+
+    max-width: 540px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #f9eadb;
+}
+
+/* =========================================================
    FRASE
-========================= */
+========================================================= */
 
 .frase {
     text-align: center;
 
-    max-width: 850px;
+    max-width: 900px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding: 80px 20px;
+    padding: 80px 25px;
+
+    background: #ead2b6;
+
+    position: relative;
 }
 
+.frase::before {
+    content: "🍪";
+
+    position: absolute;
+
+    left: 7%;
+    top: 45px;
+
+    font-size: 28px;
+
+    opacity: 0.35;
+}
+
+.frase::after {
+    content: "☕";
+
+    position: absolute;
+
+    right: 7%;
+    bottom: 45px;
+
+    font-size: 28px;
+
+    opacity: 0.35;
+}
 
 .aspas {
     font-size: 70px;
 
-    color: #c89084;
+    color: #a8795b;
 
     height: 55px;
 }
-
 
 .frase p {
     font-size: 28px;
@@ -228,8 +289,9 @@ nav a:hover {
     line-height: 1.5;
 
     font-style: italic;
-}
 
+    color: #5b4034;
+}
 
 .frase span {
     display: block;
@@ -238,66 +300,121 @@ nav a:hover {
 
     font-size: 14px;
 
-    color: #9a8177;
+    color: #896956;
 }
 
-
-/* =========================
-   SEÇÃO RECEITAS
-========================= */
+/* =========================================================
+   SEÇÃO DE RECEITAS
+========================================================= */
 
 .receitas-section {
-    padding: 70px 7%;
+    padding: 80px 7% 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ddc0a0,
+            #e7cdb1
+        );
+
+    position: relative;
 }
 
+.receitas-section::before {
+    content: "🥣";
+
+    position: absolute;
+
+    top: 42px;
+    left: 5%;
+
+    font-size: 34px;
+
+    opacity: 0.30;
+}
+
+.receitas-section::after {
+    content: "🥄";
+
+    position: absolute;
+
+    top: 42px;
+    right: 5%;
+
+    font-size: 34px;
+
+    opacity: 0.30;
+}
+
+/* =========================================================
+   TÍTULO
+========================================================= */
 
 .titulo-section {
     text-align: center;
-}
 
+    position: relative;
+
+    z-index: 2;
+}
 
 .titulo-section span {
-    color: #a65d54;
-}
+    display: block;
 
+    color: #79503e;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
 
 .titulo-section h2 {
-    font-size: 42px;
+    font-size: 45px;
 
     margin: 12px 0;
-}
 
+    color: #4f352b;
+}
 
 .titulo-section p {
-    color: #806d63;
+    color: #75584a;
+
+    font-size: 16px;
 }
 
-
-/* =========================
+/* =========================================================
    FILTROS
-========================= */
+========================================================= */
 
 .filtros {
     display: flex;
 
     justify-content: center;
+    align-items: center;
 
     flex-wrap: wrap;
 
     gap: 10px;
 
-    margin: 40px auto;
+    margin: 38px auto;
 
-    max-width: 900px;
+    max-width: 950px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-
 .filtro {
-    border: 1px solid #decfc3;
+    border: 1px solid #b88f70;
 
-    background: #fffaf6;
+    background: #f0ddc8;
 
-    color: #69564e;
+    color: #65483a;
 
     padding: 11px 22px;
 
@@ -309,27 +426,89 @@ nav a:hover {
 
     font-size: 15px;
 
-    transition: 0.25s;
-}
+    font-weight: bold;
 
+    transition: 0.25s;
+
+    box-shadow:
+        0 3px 8px rgba(79, 51, 37, 0.08);
+}
 
 .filtro:hover {
-    border-color: #ad675e;
+    background: #d4b08d;
+
+    border-color: #93654c;
+
+    transform: translateY(-1px);
 }
 
-
 .filtro.ativo {
-    background: #ad675e;
+    background: #765141;
 
     color: white;
 
-    border-color: #ad675e;
+    border-color: #765141;
+
+    box-shadow:
+        0 5px 12px rgba(72, 44, 31, 0.18);
 }
 
+/* =========================================================
+   BOTÃO ADICIONAR NOVA RECEITA
+   Funciona mesmo sem ID específico no HTML.
+========================================================= */
 
-/* =========================
+.receitas-section > button,
+.receitas-section button:not(.filtro) {
+    display: block;
+
+    margin: 28px auto 30px;
+
+    padding: 13px 24px;
+
+    border: 1px solid #b98d6b;
+
+    border-radius: 30px;
+
+    background: #ecd2b5;
+
+    color: #5e4032;
+
+    cursor: pointer;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 14px rgba(80, 50, 35, 0.14);
+
+    transition:
+        background 0.25s,
+        color 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.receitas-section > button:hover,
+.receitas-section button:not(.filtro):hover {
+    background: #795343;
+
+    border-color: #795343;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(80, 50, 35, 0.20);
+}
+
+/* =========================================================
    GRID
-========================= */
+========================================================= */
 
 .receitas-grid {
     max-width: 1200px;
@@ -341,71 +520,98 @@ nav a:hover {
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 25px;
+    gap: 27px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
-
-/* =========================
-   CARD
-========================= */
+/* =========================================================
+   CARDS
+========================================================= */
 
 .receita-card {
-    background: #fffdf9;
+    background: #fff8ef;
 
-    border: 1px solid #eadbd0;
+    border: 1px solid #c8a98d;
 
     border-radius: 20px;
 
     overflow: hidden;
 
     transition: 0.3s;
-}
-
-
-.receita-card:hover {
-    transform: translateY(-5px);
 
     box-shadow:
-        0 15px 35px rgba(87, 57, 45, 0.10);
+        0 8px 20px rgba(74, 46, 33, 0.13);
+
+    position: relative;
 }
 
+.receita-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(71, 43, 30, 0.20);
+
+    border-color: #a87b5c;
+}
+
+/* =========================================================
+   IMPORTANTE:
+   NÃO existe mais símbolo ✦ sobre as fotos.
+========================================================= */
+
+.receita-card::after {
+    content: none !important;
+}
+
+.receita-card::before {
+    content: none !important;
+}
+
+/* =========================================================
+   IMAGENS DOS CARDS
+========================================================= */
 
 .receita-card img {
     width: 100%;
 
-    height: 240px;
+    height: 245px;
 
     object-fit: cover;
 
     display: block;
 }
 
+/* =========================================================
+   CONTEÚDO DO CARD
+========================================================= */
 
 .card-conteudo {
-    padding: 24px;
+    padding: 25px;
 }
-
 
 .categoria {
     font-size: 11px;
 
     letter-spacing: 2px;
 
-    color: #ad5f57;
+    color: #9a6348;
 
     font-weight: bold;
 }
-
 
 .card-conteudo h3 {
     margin: 10px 0;
 
     font-size: 24px;
+
+    color: #51372c;
 }
 
-
 .card-conteudo p {
-    color: #79675f;
+    color: #765d4e;
 
     line-height: 1.6;
 
@@ -414,7 +620,6 @@ nav a:hover {
     min-height: 48px;
 }
 
-
 .ver-receita {
     margin-top: 18px;
 
@@ -422,7 +627,7 @@ nav a:hover {
 
     background: transparent;
 
-    color: #a65d54;
+    color: #8b5b44;
 
     font-family: inherit;
 
@@ -433,48 +638,78 @@ nav a:hover {
     font-weight: bold;
 }
 
-
 .ver-receita:hover {
+    color: #5c3b2e;
+
     text-decoration: underline;
 }
 
-
-/* =========================
-   FAMÍLIA
-========================= */
+/* =========================================================
+   ÁREA DA FAMÍLIA
+========================================================= */
 
 .familia {
-    margin-top: 80px;
+    margin-top: 0;
 
-    padding: 90px 8%;
+    padding: 95px 8%;
 
-    background: #eee1d7;
+    background:
+        linear-gradient(
+            135deg,
+            #c59c7b,
+            #b48668
+        );
 
     display: grid;
 
-    grid-template-columns:
-        0.8fr 1.2fr;
+    grid-template-columns: 0.8fr 1.2fr;
 
     gap: 60px;
 
     align-items: center;
+
+    position: relative;
 }
 
+.familia::before {
+    content: "🍴";
+
+    position: absolute;
+
+    left: 5%;
+    top: 40px;
+
+    font-size: 35px;
+
+    opacity: 0.25;
+}
+
+.familia-texto {
+    position: relative;
+
+    z-index: 2;
+}
 
 .familia-texto span {
-    color: #a45b52;
-}
+    color: #f7e3cc;
 
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+}
 
 .familia-texto h2 {
     font-size: 48px;
 
     margin: 15px 0;
+
+    color: #fff8ee;
 }
 
-
 .familia-texto p {
-    color: #705c53;
+    color: #f5e6d7;
 
     line-height: 1.8;
 
@@ -483,10 +718,19 @@ nav a:hover {
     font-size: 17px;
 }
 
+.familia-texto .botao {
+    background: #f0d1b1;
 
-/* =========================
+    color: #5a3b2e;
+}
+
+.familia-texto .botao:hover {
+    background: #fff0df;
+}
+
+/* =========================================================
    FOTOS DA FAMÍLIA
-========================= */
+========================================================= */
 
 .familia-fotos {
     display: grid;
@@ -497,7 +741,6 @@ nav a:hover {
     gap: 18px;
 }
 
-
 .foto-familia {
     height: 230px;
 
@@ -505,17 +748,17 @@ nav a:hover {
 
     border-radius: 18px;
 
-    box-shadow:
-        0 10px 25px rgba(65, 43, 35, 0.15);
-}
+    border: 5px solid #f5e5d5;
 
+    box-shadow:
+        0 10px 25px rgba(60, 35, 24, 0.20);
+}
 
 .foto-familia.grande {
     grid-column: span 2;
 
     height: 300px;
 }
-
 
 .foto-familia img {
     width: 100%;
@@ -529,80 +772,102 @@ nav a:hover {
     transition: 0.4s;
 }
 
-
 .foto-familia:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
-
-/* =========================
+/* =========================================================
    FINAL
-========================= */
+========================================================= */
 
 .final {
     padding: 100px 8%;
 
     text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e2c3a2,
+            #d4ae89
+        );
+
+    position: relative;
 }
 
+.final::before {
+    content: "🍰   ☕   🥄";
+
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-size: 26px;
+
+    opacity: 0.55;
+
+    letter-spacing: 8px;
+}
 
 .final span {
-    color: #a45b52;
+    color: #80553f;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
 }
 
-
 .final h2 {
-    max-width: 700px;
+    max-width: 800px;
 
     margin: 15px auto;
 
-    font-size: 42px;
+    font-size: 44px;
 
     font-weight: normal;
+
+    color: #51372c;
 }
 
-
 .final p {
-    max-width: 600px;
+    max-width: 650px;
 
     margin: auto;
 
-    color: #77665d;
+    color: #73584a;
 
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* =========================================================
+   RODAPÉ
+========================================================= */
 
 footer {
-    background: #4c3932;
+    background: #51382e;
 
-    color: #fff5ef;
+    color: #fff4e8;
 
     text-align: center;
 
-    padding: 45px 20px;
+    padding: 48px 20px;
 }
-
 
 footer h3 {
-    font-size: 22px;
+    font-size: 23px;
 }
-
 
 footer p {
     margin-top: 10px;
 
-    color: #dfccc2;
+    color: #dfc4ad;
 }
 
-
-/* =========================
+/* =========================================================
    MODAIS
-========================= */
+========================================================= */
 
 .modal {
     display: none;
@@ -611,7 +876,7 @@ footer p {
 
     inset: 0;
 
-    background: rgba(47, 33, 28, 0.70);
+    background: rgba(55, 35, 26, 0.76);
 
     z-index: 500;
 
@@ -619,7 +884,6 @@ footer p {
 
     overflow-y: auto;
 }
-
 
 .modal.aberto {
     display: flex;
@@ -629,9 +893,8 @@ footer p {
     justify-content: center;
 }
 
-
 .modal-conteudo {
-    background: #fffaf5;
+    background: #fff5e9;
 
     width: 100%;
 
@@ -647,10 +910,11 @@ footer p {
 
     position: relative;
 
-    box-shadow:
-        0 20px 60px rgba(0,0,0,0.25);
-}
+    border: 2px solid #c8a180;
 
+    box-shadow:
+        0 25px 70px rgba(30, 18, 12, 0.35);
+}
 
 .fechar {
     position: absolute;
@@ -665,18 +929,21 @@ footer p {
 
     font-size: 35px;
 
-    color: #795f55;
+    color: #795b4c;
 
     cursor: pointer;
 }
 
+.fechar:hover {
+    color: #4d3429;
+}
 
-/* =========================
-   MODAL DA RECEITA
-========================= */
+/* =========================================================
+   DETALHES DA RECEITA
+========================================================= */
 
 #modalCategoria {
-    color: #a45b52;
+    color: #976047;
 
     letter-spacing: 2px;
 
@@ -685,40 +952,53 @@ footer p {
     font-weight: bold;
 }
 
-
 #modalTitulo {
     font-size: 35px;
 
     margin: 10px 0 25px;
+
+    color: #50372c;
 }
 
+#modalImagem {
+    width: 100%;
+
+    max-height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    margin-bottom: 20px;
+
+    border: 4px solid #e1c5a8;
+}
 
 .modal-conteudo h3 {
     margin-top: 25px;
 
     margin-bottom: 10px;
 
-    color: #714d43;
+    color: #704a38;
 }
-
 
 #modalIngredientes {
     padding-left: 25px;
 
     line-height: 1.8;
-}
 
+    color: #654c3e;
+}
 
 #modalPreparo {
     line-height: 1.8;
 
-    color: #6d5b52;
+    color: #6d5548;
 }
 
-
-/* =========================
+/* =========================================================
    LOGIN
-========================= */
+========================================================= */
 
 .login-conteudo {
     max-width: 470px;
@@ -726,18 +1006,16 @@ footer p {
     text-align: center;
 }
 
-
 .login-icone {
     font-size: 42px;
 
     margin-bottom: 8px;
 }
 
-
 .login-selo {
     display: inline-block;
 
-    color: #a45b52;
+    color: #936047;
 
     letter-spacing: 2px;
 
@@ -746,51 +1024,48 @@ footer p {
     font-weight: bold;
 }
 
-
 .login-conteudo h2 {
     font-size: 34px;
 
     margin: 12px 0;
+
+    color: #50372c;
 }
 
-
 .login-brincadeira {
-    color: #756159;
+    color: #756054;
 
     line-height: 1.7;
 
     margin-bottom: 25px;
 }
 
-
 #loginForm {
     text-align: left;
 }
-
 
 #loginForm label {
     display: block;
 
     margin: 15px 0 7px;
 
-    color: #614a42;
+    color: #61483b;
 
     font-weight: bold;
 
     font-size: 14px;
 }
 
-
 #loginForm input {
     width: 100%;
 
     padding: 13px 15px;
 
-    border: 1px solid #ddcfc6;
+    border: 1px solid #cdb198;
 
     border-radius: 12px;
 
-    background: #fffdf9;
+    background: #fffaf3;
 
     color: #513d35;
 
@@ -803,19 +1078,12 @@ footer p {
     transition: 0.2s;
 }
 
-
 #loginForm input:focus {
-    border-color: #a96058;
+    border-color: #956149;
 
     box-shadow:
-        0 0 0 3px rgba(169, 96, 88, 0.10);
+        0 0 0 3px rgba(149, 97, 73, 0.12);
 }
-
-
-#loginForm input:invalid:not(:placeholder-shown) {
-    border-color: #c98278;
-}
-
 
 .login-submit {
     width: 100%;
@@ -831,7 +1099,6 @@ footer p {
     font-weight: bold;
 }
 
-
 .login-mensagem {
     min-height: 24px;
 
@@ -844,42 +1111,138 @@ footer p {
     line-height: 1.5;
 }
 
-
 .login-mensagem.erro {
     color: #a34f48;
 }
-
 
 .login-mensagem.aviso {
     color: #95613b;
 }
 
-
 .login-mensagem.sucesso {
     color: #5d7b57;
 }
 
+/* =========================================================
+   BOAS-VINDAS
+========================================================= */
 
-/* =========================
+#boasVindasModal .modal-conteudo {
+    max-width: 550px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5e8,
+            #ead0b3
+        );
+}
+
+#boasVindasModal h2 {
+    color: #55392d;
+
+    font-size: 34px;
+
+    margin: 12px 0;
+}
+
+#boasVindasModal p {
+    color: #705447;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   NOVA RECEITA
+========================================================= */
+
+#novaReceitaModal .modal-conteudo {
+    max-width: 650px;
+}
+
+#novaReceitaForm label {
+    display: block;
+
+    margin: 16px 0 7px;
+
+    color: #61483b;
+
+    font-weight: bold;
+}
+
+#novaReceitaForm input,
+#novaReceitaForm textarea,
+#novaReceitaForm select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cdb198;
+
+    border-radius: 11px;
+
+    background: #fffaf3;
+
+    color: #513d35;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#novaReceitaForm textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+#novaReceitaForm input:focus,
+#novaReceitaForm textarea:focus,
+#novaReceitaForm select:focus {
+    border-color: #956149;
+
+    box-shadow:
+        0 0 0 3px rgba(149, 97, 73, 0.10);
+}
+
+#previewImagem {
+    width: 100%;
+
+    max-height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    margin-top: 12px;
+
+    border: 3px solid #d4b292;
+}
+
+/* =========================================================
    RESPONSIVO
-========================= */
+========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
     .receitas-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .familia {
         grid-template-columns: 1fr;
     }
 
+    .hero h1 {
+        font-size: 55px;
+    }
 }
 
-
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     header {
         padding: 15px 5%;
@@ -889,7 +1252,6 @@ footer p {
         gap: 12px;
     }
 
-
     nav {
         gap: 10px;
 
@@ -898,85 +1260,127 @@ footer p {
         justify-content: flex-end;
     }
 
-
     nav a {
         font-size: 13px;
     }
 
-
-    .botao-login {
+    .botao-login,
+    .botao-sair {
         padding: 8px 11px;
 
         font-size: 12px;
     }
 
-
     .hero {
-        min-height: 550px;
+        min-height: 560px;
 
-        padding: 50px 7%;
+        padding: 55px 7%;
 
         background-position: 65% center;
     }
 
-
     .hero h1 {
-        font-size: 44px;
+        font-size: 45px;
     }
-
 
     .hero p {
         font-size: 16px;
     }
 
+    .hero::after {
+        right: 5%;
+
+        bottom: 20px;
+    }
+
+    .frase {
+        padding: 65px 20px;
+    }
+
+    .frase p {
+        font-size: 23px;
+    }
 
     .receitas-section {
-        padding: 55px 5%;
+        padding: 65px 5% 80px;
     }
-
 
     .titulo-section h2 {
-        font-size: 34px;
+        font-size: 35px;
     }
-
 
     .receitas-grid {
         grid-template-columns: 1fr;
     }
 
-
     .familia {
-        padding: 65px 5%;
+        padding: 70px 5%;
     }
-
 
     .familia-texto h2 {
         font-size: 38px;
     }
 
-
     .familia-fotos {
         grid-template-columns: 1fr;
     }
 
-
     .foto-familia.grande {
         grid-column: span 1;
+
+        height: 260px;
     }
 
+    .final {
+        padding: 75px 6%;
+    }
+
+    .final h2 {
+        font-size: 35px;
+    }
 
     .modal {
         padding: 15px;
     }
 
-
     .modal-conteudo {
         padding: 30px 22px;
     }
 
-
     .login-conteudo h2 {
         font-size: 29px;
     }
+}
 
+@media (max-width: 420px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .titulo-section h2 {
+        font-size: 31px;
+    }
+
+    .filtro {
+        padding: 9px 15px;
+
+        font-size: 13px;
+    }
+
+    .card-conteudo h3 {
+        font-size: 21px;
+    }
+
+    .familia-texto h2 {
+        font-size: 33px;
+    }
 }
